@@ -1,18 +1,16 @@
 Homework for 1/27/2025
 
-Question 1:
+# Question 1:
 
-docker run -it --entrypoint=bash python:3.12.8
-# Once inside the bash entrypoint:
-pip --version
->pip 24.3.1 from /usr/local/lib/python3.12/site-packages/pip (python 3.12)
+> docker run -it --entrypoint=bash python:3.12.8
+Once inside the bash entrypoint:
+> pip --version
+pip 24.3.1 from /usr/local/lib/python3.12/site-packages/pip (python 3.12)
 
-Question 2. Understanding Docker networking and docker-compose
+# Question 2. Understanding Docker networking and docker-compose
 Given the following docker-compose.yaml, what is the hostname and port that pgadmin should use to connect to the postgres database?
 
-host name: 
-
-localhost:5432 
+it'd be postgres:5432 because the container name is going to be the name found by te dockerized pgadmin, not localhost.
 
 
 Some scratch...
@@ -58,7 +56,7 @@ docker run -it \
 
 ##### Start of homework
 
-Question 3:
+# Question 3:
 
 SELECT 
   COUNT(1) AS total_trips,
@@ -81,14 +79,14 @@ GROUP BY
 	WHEN gtt.trip_distance > 10 THEN '10+ miles'
 END;
 
-Question 4:
+# Question 4:
 
 SELECT MAX(gtt.trip_distance), CAST(gtt.lpep_pickup_datetime AS DATE) as pickup_time from green_taxi_trips gtt
 GROUP BY pickup_time
 ORDER BY 1 DESC
 LIMIT 1;
 
-Question 5:
+# Question 5:
 
 SELECT z."Zone", SUM(gtt.total_amount) as total_amount_in_zone FROM green_taxi_trips gtt
 JOIN zones z
@@ -98,7 +96,7 @@ GROUP BY "Zone"
 ORDER BY total_amount_in_zone DESC
 limit 3;
 
-Question 6:
+# Question 6:
 
 SELECT 
     zdropoff."Zone", 
