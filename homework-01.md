@@ -18,8 +18,8 @@ localhost:5432
 Some scratch...
 
 docker run -it \
-    -e PGADMIN_DEFAULT_EMAIL="alecroth14@gmail.com" \
-    -e PGADMIN_DEFAULT_PASSWORD="MarleyChloe1!" \
+    -e PGADMIN_DEFAULT_EMAIL="some user" \
+    -e PGADMIN_DEFAULT_PASSWORD="some pass" \
     -p 8080:80 \
     --network=pg-network \
     --name pgadmin \
